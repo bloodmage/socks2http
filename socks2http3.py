@@ -64,7 +64,7 @@ async def pump(reader, writer, stats, mychan, killevent, timeout = 15, bulk = 81
             #A timeout
             stats[mychan+'timeout'] = True
             #If all timeout, stop
-            if stats['uptimeout'] and stats['downtimeout']:
+            if stats['>timeout'] and stats['<timeout']:
                 break
     #To kill
     killevent.set()
